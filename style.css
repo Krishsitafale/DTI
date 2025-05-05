@@ -225,9 +225,9 @@
 }
 
 .subject-interface {
-    height: 100vh;
-    padding: 20px;
-    margin: 20px;
+  height: 100vh;
+  padding: 20px;
+  margin: 20px;
 }
 .subject-interface h2 {
   font-size: 2rem;
@@ -484,7 +484,6 @@ p {
     padding: 0;
   }
   .right .content {
-    height: 92vh;
     width: 122%;
   }
   .hello {
@@ -507,10 +506,6 @@ p {
   }
   .pyp {
     min-height: 400px;
-  }
-  .pyp-card {
-    width: 100px;
-    height: 50px;
   }
   .pyp h2 {
     font-size: 22px;
@@ -539,6 +534,7 @@ p {
   }
 }
 @media (max-width: 580px) {
+  
   .left {
     background-color: var(--global-bg);
     position: absolute;
@@ -565,8 +561,8 @@ p {
     padding: 10px;
   }
   .right .content {
-    height: 92vh;
-    width: 122%;
+    height: auto;
+    overflow-y: auto;
   }
   .hello {
     width: 122%;
@@ -578,36 +574,46 @@ p {
   .pyq-card {
     width: 95px;
     height: 75px;
+    font-size: 14px;
   }
   .book-card img {
-    width: 110px;
-    height: 160px;
+    width: 135px;
+    height: 165px;
     cursor: pointer;
   }
   .Books {
     min-height: 290px;
-    margin: 10px 40px;
+    margin: 10px 25px;
   }
+  .pyq-section {
+    margin: 30px;
+    padding: 40px;
+    border-radius: 12px;
+    }
   .pyp {
-    margin: 40px;
+    margin: 25px;
     padding: 15px;
     min-height: 350px;
   }
+  .pyp h2 {
+    font-size: 20px;
+  }
   .pyp-header {
     align-items: start;
+    justify-content: space-between;
   }
   .pyp-card {
     width: 100px;
     height: 50px;
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .viewBtn-pyp {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: bolder;
   }
   .Notes {
-    margin: 35px;
+    margin: 25px;
     padding: 15px;
     min-height: 400px;
   }
@@ -637,9 +643,9 @@ p {
     align-items: start;
   }
   .back-button {
-    padding: 0px 5px;
+    padding: 5px 5px;
     font-size: 15px;
-  }
+    }
   .subject-interface p {
     font-size: 1rem;
     margin: 10px;
@@ -653,4 +659,52 @@ p {
     height: 50px;
     font-size: 15px;
   }
+}
+
+@media (max-width: 391px) {
+  .pyq-section {
+    margin: 22px;
+    padding: 15px;
+    border-radius: 12px;
+    }
+  .pyq-card {
+    width: 100px;
+    height: 50px;
+    font-size: 15px;
+  }
+  .pyq-card {
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    text-overflow: ellipsis;
+  }
+  .subject-interface {
+    height: 100vh;
+    padding: 15px;
+    margin: 10px;
+    }
+  .q-card {
+    width: 85px;
+    height: 55px;
+    font-size: 15px;
+  }
+  .Books {
+    min-height: 290px;
+    margin: 10px 15px;
+  }
+  .pyp {
+    margin: 15px;
+    padding: 14px;
+    min-height: 350px;
+  }
+  .Notes {
+    margin: 15px;
+    padding: 14px;
+    min-height: 400px;
+  }
+  .book-card img {
+    width: 120px;
+    height: 165px;
+    cursor: pointer;
+    }
 }

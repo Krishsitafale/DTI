@@ -1,21 +1,14 @@
 console.log("Hey! this is my script");
-window.addEventListener('load', function() {
-    window.scrollTo(0, 0);
-  });
-// Prevent browser from restoring previous scroll position
-if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-}
 
 // Ensure scroll to top on full load
 window.addEventListener("load", function () {
-    setTimeout(() => {
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        });
-    }, 10);
+  setTimeout(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, 10);
 });
 
 const container = document.querySelector(".container");
@@ -25,80 +18,197 @@ const booksBtn = document.querySelector(".books");
 const notesBtn = document.querySelector(".notes");
 const content = document.querySelector(".content");
 // const pyBtn = document.querySelector(".pyp");
-const notes = document.querySelector(".Notes")
+const notes = document.querySelector(".Notes");
 
 const allButtons = [homeBtn, pypBtn, booksBtn, notesBtn];
 
-
-document.addEventListener('click', function(e) {
-    if (e.target.matches('#backFrom')) {
-        console.log("Back button clicked");
-        location.reload(); // Or call your custom logic
-    }
+document.addEventListener("click", function (e) {
+  if (e.target.matches("#backFrom")) {
+    console.log("Back button clicked");
+    location.reload(); // Or call your custom logic
+  }
 });
-
 
 // Subject wise PYQ Data
 const subjectData = {
-    "Maths": [
-        { label: "MST 2025 (Sem II)", link: "https://drive.google.com/file/d/1NNJYLEVEAOz1GiravQGdWQLzf_7tMRaD/view?usp=share_link" },
-        { label: "ESE 2024 (Sem I)", link: "https://drive.google.com/file/d/1Nhp5mA6C375j5eHuw-j_BVJJWXdJoOOy/view?usp=share_link" },
-        {label :"MST 2024 (Sem I)", link:"https://drive.google.com/file/d/1NXPGLqaUD0uTPPeQ-mO6pEc_PRZ3-FS7/view?usp=share_link"},
-        {label: "ESE 2024 (Sem II)", link:"https://drive.google.com/file/d/1OPqrfiEMgxwxfSatUVvRQv8eqU3_MIvA/view?usp=share_link"},
-        {label :"MST 2024 (Sem II)", link:"https://drive.google.com/file/d/1OdlnQkV3kBM9civ98h3OoANgwlfA-Bub/view?usp=share_link"},
-        {label:"ESE 2023 (Sem I)", link:"https://drive.google.com/file/d/1OhM4sgujoECHqPoconjhVPkTa13fvJej/view?usp=share_link"},
-        {label:"MST 2023 (Sem I)", link: "https://drive.google.com/file/d/1P2nxJxiniKcqOHKSlBnpD42S9kul4yrl/view?usp=share_link"},
-    ],
-    "B.E.": [
-        { label: "MST 2025 (Sem II)", link: "https://drive.google.com/file/d/1NNSMCP3xuojznBLTgBpuws_taqkQWPkW/view?usp=share_link" },
-        {label:"MST 2025 (Sem II EC)" , link:"https://drive.google.com/file/d/1Pbq3u_E_w8FPloegJk9iDWVWMpevg8jI/view?usp=share_link"},
-        { label: "ESE 2025 (Sem I)", link: "https://drive.google.com/file/d/your-link-4/view" },
-        {label :"ESE 2024 (Sem II)", link:"https://drive.google.com/file/d/1OUJh8iy2hejhxqK1VnoE7jjDAtENEDo2/view?usp=share_link"},
-        {label: "MST 2024 (Sem II)", link:"https://drive.google.com/file/d/1P6TCuYhcS0UG4EybRIx44ru__xkj8PyB/view?usp=share_link"}
-    ],
-    "Chemistry": [
-        { label: "ESE 2024 (Sem I)", link: "https://drive.google.com/file/d/1Nf83iQCV3927c5ar1FC54REqOOYFKLG5/view?usp=share_link" },
-        { label: "MST 2024 (Sem I)", link: "https://drive.google.com/file/d/1NWm8Z7MXuwESOfaaCENn0NTDzldW6UDm/view?usp=share_link" },
-        {label: "ESE 2023 (Sem I)", link:"https://drive.google.com/file/d/1Oj2TNG95uCkgRzmUNV6n1szKBIgNcx9N/view?usp=sharing"},
-        { label: "MST 2023 (Sem I)", link :"https://drive.google.com/file/d/1P3mcSdXFpQzrW2JmVtYWT1BGdOKE6FjX/view?usp=share_link"},
-    ],
-    "Engineering Graphics": [
-        {label: "MST 2025 (Sem II)", link:"https://drive.google.com/file/d/1NOVIiRU-GrV1pcoYTcIHw9s-dSg-h1cN/view?usp=share_link"},
-        {label:"ESE 2024 (Sem II)", link:"https://drive.google.com/file/d/1OQl1l70661Z0rocFuWsqfTIDcM0MYWAL/view?usp=share_link"},
-        {label: "MST 2024 (Sem II)", link:"https://drive.google.com/file/d/1P5fZFAHgflr-BBozaOGjheJehS9t315U/view?usp=share_link"},
-    ],
-    "Numerical Techiques":[
-        {label: "MST 2025 (Sem II)", link:"https://drive.google.com/file/d/1NOfxIPvfmrFKM202Z2k4ZxOcGGydq3pk/view?usp=share_link"},
-        {label:"ESE 2024 (Sem II)", link:"https://drive.google.com/file/d/1ORolbYY51YoVDTp1MuqYgYKHmHpYTAIN/view?usp=share_link"},
-        {label:"MST 2024 (Sem II)", link:"https://drive.google.com/file/d/1ObeqxnQmkXSRiAWB0oljmijQVApwPD_E/view?usp=share_link"},
-    ],
-    "Applied Physics": [
-        {label:"MST 2025 (Sem II)", link:"https://drive.google.com/file/d/1NP9f29TMSB1qEf1FJK3EF8OL4HaUgk4Q/view?usp=share_link"},
-        {label:"ESE 2024 (Sem II)", link:"https://drive.google.com/file/d/1OP-do1c8id1gmajLDNNLaN5NBlW7ZSAL/view?usp=share_link"},
-        {label:"MST 2024 (Sem II)", link:"https://drive.google.com/file/d/1Oa0-tWzq_RFWAeoOS4QBBsTCwrvN8OxY/view?usp=share_link"},
-    ],
-    "B.E.E.":[
-        {label:"ESE 2024 (Sem I)", link:"https://drive.google.com/file/d/1NoXHnLP0iZIEi1cLGQw2q7O_W8wr8HKK/view?usp=share_link"},
-        {label:"MST 2024 (Sem I)", link:"https://drive.google.com/file/d/1NZK7jq6Ps5D32gwwemlB2QpFlKIhfn-x/view?usp=share_link"},
-        {label:"ESE 2023 (Sem I)", link:"https://drive.google.com/file/d/1OieAIrFeNdvTGhERiXYaMdlQHkqg3oBK/view?usp=share_link"},
-        {label:"MST 2023 (Sem I)", link:"https://drive.google.com/file/d/1OslHlSAssDP4_Y6Jh7gLjIoFeStKIR1e/view?usp=sharing"},
-    ],
-    "CPPS": [
-        {label:"ESE 2024 (Sem I", link:"https://drive.google.com/file/d/1Nic8XN-Y1KTXOqxqznWeFmEQAcU1flES/view?usp=share_link"},
-        {label:"MST 2024 (Sem I)", link:"https://drive.google.com/file/d/1N_1HunsmrseQpd71vVlA2kGmLARA77QR/view?usp=share_link"},
-        {label:"ESE 2023 (Sem I)", link:"https://drive.google.com/file/d/1Ohbt9zsh4UfZlriuqwSVdX62Dnu3chgJ/view?usp=share_link"},
-        {label:"MST 2023 (Sem I)", link:"https://drive.google.com/file/d/1OsuEeZ_H5AveQgactFPCwlGiHOdwpROB/view?usp=share_link"},
-    ],
-    "BSE": [
-        {label:"ESE 2024(Sem I)", link:"https://drive.google.com/file/d/1Noj2PByfJbcUeRBtXD8iu-0GS9Z8qd-E/view?usp=share_link"},
-        {label:"MST 2024 (Sem I)", link:"https://drive.google.com/file/d/1NVz4_85iZkNXGoBudte5uWMqit8iGxdV/view?usp=share_link"},
-        {label:"ESE 2023 (Sem II)", link:"https://drive.google.com/file/d/1Oj2TNG95uCkgRzmUNV6n1szKBIgNcx9N/view?usp=share_link"},
-        {label: "MST 2023 (Sem I)", link:"https://drive.google.com/file/d/1OslHlSAssDP4_Y6Jh7gLjIoFeStKIR1e/view?usp=share_link"},
-    ],
-    "Engineering Mechanics": [
-        {label:"ESE 2023 (Sem I)", link:"https://drive.google.com/file/d/1OiEiwzOyUl8bndmG1ASeY6d5vow3q8z8/view?usp=share_link"},
-        {label:"MST 2023 (Sem I)", link:"https://drive.google.com/file/d/1OslHlSAssDP4_Y6Jh7gLjIoFeStKIR1e/view?usp=sharing"},
-    ]
+  Maths: [
+    {
+      label: "MST 2025 (Sem II)",
+      link: "https://drive.google.com/file/d/1NNJYLEVEAOz1GiravQGdWQLzf_7tMRaD/view?usp=share_link",
+    },
+    {
+      label: "ESE 2024 (Sem I)",
+      link: "https://drive.google.com/file/d/1Nhp5mA6C375j5eHuw-j_BVJJWXdJoOOy/view?usp=share_link",
+    },
+    {
+      label: "MST 2024 (Sem I)",
+      link: "https://drive.google.com/file/d/1NXPGLqaUD0uTPPeQ-mO6pEc_PRZ3-FS7/view?usp=share_link",
+    },
+    {
+      label: "ESE 2024 (Sem II)",
+      link: "https://drive.google.com/file/d/1OPqrfiEMgxwxfSatUVvRQv8eqU3_MIvA/view?usp=share_link",
+    },
+    {
+      label: "MST 2024 (Sem II)",
+      link: "https://drive.google.com/file/d/1OdlnQkV3kBM9civ98h3OoANgwlfA-Bub/view?usp=share_link",
+    },
+    {
+      label: "ESE 2023 (Sem I)",
+      link: "https://drive.google.com/file/d/1OhM4sgujoECHqPoconjhVPkTa13fvJej/view?usp=share_link",
+    },
+    {
+      label: "MST 2023 (Sem I)",
+      link: "https://drive.google.com/file/d/1P2nxJxiniKcqOHKSlBnpD42S9kul4yrl/view?usp=share_link",
+    },
+  ],
+  "B.E.": [
+    {
+      label: "MST 2025 (Sem II)",
+      link: "https://drive.google.com/file/d/1NNSMCP3xuojznBLTgBpuws_taqkQWPkW/view?usp=share_link",
+    },
+    {
+      label: "MST 2025 (Sem II EC)",
+      link: "https://drive.google.com/file/d/1Pbq3u_E_w8FPloegJk9iDWVWMpevg8jI/view?usp=share_link",
+    },
+    {
+      label: "ESE 2025 (Sem I)",
+      link: "https://drive.google.com/file/d/your-link-4/view",
+    },
+    {
+      label: "ESE 2024 (Sem II)",
+      link: "https://drive.google.com/file/d/1OUJh8iy2hejhxqK1VnoE7jjDAtENEDo2/view?usp=share_link",
+    },
+    {
+      label: "MST 2024 (Sem II)",
+      link: "https://drive.google.com/file/d/1P6TCuYhcS0UG4EybRIx44ru__xkj8PyB/view?usp=share_link",
+    },
+  ],
+  Chemistry: [
+    {
+      label: "ESE 2024 (Sem I)",
+      link: "https://drive.google.com/file/d/1Nf83iQCV3927c5ar1FC54REqOOYFKLG5/view?usp=share_link",
+    },
+    {
+      label: "MST 2024 (Sem I)",
+      link: "https://drive.google.com/file/d/1NWm8Z7MXuwESOfaaCENn0NTDzldW6UDm/view?usp=share_link",
+    },
+    {
+      label: "ESE 2023 (Sem I)",
+      link: "https://drive.google.com/file/d/1Oj2TNG95uCkgRzmUNV6n1szKBIgNcx9N/view?usp=sharing",
+    },
+    {
+      label: "MST 2023 (Sem I)",
+      link: "https://drive.google.com/file/d/1P3mcSdXFpQzrW2JmVtYWT1BGdOKE6FjX/view?usp=share_link",
+    },
+  ],
+  "Engineering Graphics": [
+    {
+      label: "MST 2025 (Sem II)",
+      link: "https://drive.google.com/file/d/1NOVIiRU-GrV1pcoYTcIHw9s-dSg-h1cN/view?usp=share_link",
+    },
+    {
+      label: "ESE 2024 (Sem II)",
+      link: "https://drive.google.com/file/d/1OQl1l70661Z0rocFuWsqfTIDcM0MYWAL/view?usp=share_link",
+    },
+    {
+      label: "MST 2024 (Sem II)",
+      link: "https://drive.google.com/file/d/1P5fZFAHgflr-BBozaOGjheJehS9t315U/view?usp=share_link",
+    },
+  ],
+  "Numerical Techiques": [
+    {
+      label: "MST 2025 (Sem II)",
+      link: "https://drive.google.com/file/d/1NOfxIPvfmrFKM202Z2k4ZxOcGGydq3pk/view?usp=share_link",
+    },
+    {
+      label: "ESE 2024 (Sem II)",
+      link: "https://drive.google.com/file/d/1ORolbYY51YoVDTp1MuqYgYKHmHpYTAIN/view?usp=share_link",
+    },
+    {
+      label: "MST 2024 (Sem II)",
+      link: "https://drive.google.com/file/d/1ObeqxnQmkXSRiAWB0oljmijQVApwPD_E/view?usp=share_link",
+    },
+  ],
+  "Applied Physics": [
+    {
+      label: "MST 2025 (Sem II)",
+      link: "https://drive.google.com/file/d/1NP9f29TMSB1qEf1FJK3EF8OL4HaUgk4Q/view?usp=share_link",
+    },
+    {
+      label: "ESE 2024 (Sem II)",
+      link: "https://drive.google.com/file/d/1OP-do1c8id1gmajLDNNLaN5NBlW7ZSAL/view?usp=share_link",
+    },
+    {
+      label: "MST 2024 (Sem II)",
+      link: "https://drive.google.com/file/d/1Oa0-tWzq_RFWAeoOS4QBBsTCwrvN8OxY/view?usp=share_link",
+    },
+  ],
+  "B.E.E.": [
+    {
+      label: "ESE 2024 (Sem I)",
+      link: "https://drive.google.com/file/d/1NoXHnLP0iZIEi1cLGQw2q7O_W8wr8HKK/view?usp=share_link",
+    },
+    {
+      label: "MST 2024 (Sem I)",
+      link: "https://drive.google.com/file/d/1NZK7jq6Ps5D32gwwemlB2QpFlKIhfn-x/view?usp=share_link",
+    },
+    {
+      label: "ESE 2023 (Sem I)",
+      link: "https://drive.google.com/file/d/1OieAIrFeNdvTGhERiXYaMdlQHkqg3oBK/view?usp=share_link",
+    },
+    {
+      label: "MST 2023 (Sem I)",
+      link: "https://drive.google.com/file/d/1OslHlSAssDP4_Y6Jh7gLjIoFeStKIR1e/view?usp=sharing",
+    },
+  ],
+  CPPS: [
+    {
+      label: "ESE 2024 (Sem I",
+      link: "https://drive.google.com/file/d/1Nic8XN-Y1KTXOqxqznWeFmEQAcU1flES/view?usp=share_link",
+    },
+    {
+      label: "MST 2024 (Sem I)",
+      link: "https://drive.google.com/file/d/1N_1HunsmrseQpd71vVlA2kGmLARA77QR/view?usp=share_link",
+    },
+    {
+      label: "ESE 2023 (Sem I)",
+      link: "https://drive.google.com/file/d/1Ohbt9zsh4UfZlriuqwSVdX62Dnu3chgJ/view?usp=share_link",
+    },
+    {
+      label: "MST 2023 (Sem I)",
+      link: "https://drive.google.com/file/d/1OsuEeZ_H5AveQgactFPCwlGiHOdwpROB/view?usp=share_link",
+    },
+  ],
+  BSE: [
+    {
+      label: "ESE 2024(Sem I)",
+      link: "https://drive.google.com/file/d/1Noj2PByfJbcUeRBtXD8iu-0GS9Z8qd-E/view?usp=share_link",
+    },
+    {
+      label: "MST 2024 (Sem I)",
+      link: "https://drive.google.com/file/d/1NVz4_85iZkNXGoBudte5uWMqit8iGxdV/view?usp=share_link",
+    },
+    {
+      label: "ESE 2023 (Sem II)",
+      link: "https://drive.google.com/file/d/1Oj2TNG95uCkgRzmUNV6n1szKBIgNcx9N/view?usp=share_link",
+    },
+    {
+      label: "MST 2023 (Sem I)",
+      link: "https://drive.google.com/file/d/1OslHlSAssDP4_Y6Jh7gLjIoFeStKIR1e/view?usp=share_link",
+    },
+  ],
+  "Engineering Mechanics": [
+    { label: "ESE 2024 (Sem I)", link: "https://drive.google.com/file/d/1Nhp5mA6C375j5eHuw-j_BVJJWXdJoOOy/view?usp=share_link" },
+    { label: "MST 2024 (Sem I)", link: "https://drive.google.com/file/d/1NYwyQ8IZXBgXB-Ff7V7yqL__jYnV1Qeo/view?usp=share_link" },
+    {
+      label: "ESE 2023 (Sem I)",
+      link: "https://drive.google.com/file/d/1OiEiwzOyUl8bndmG1ASeY6d5vow3q8z8/view?usp=share_link",
+    },
+    {
+      label: "MST 2023 (Sem I)",
+      link: "https://drive.google.com/file/d/1OslHlSAssDP4_Y6Jh7gLjIoFeStKIR1e/view?usp=sharing",
+    },
+  ],
 };
 
 const booksPageHTML = ` <div class="Books">
@@ -145,7 +255,7 @@ const booksPageHTML = ` <div class="Books">
                 <img class="book" src="assets/robert.png" data-pdf="https://drive.google.com/file/d/19E5iDf4iCdyQJsWYrVup8td0QfSq0gPW/view?usp=share_link" alt="Basic Electronics Robert L. Boylestad">
             </div>
         </div>
-    </div>`
+    </div>`;
 
 const pypHTML = `<div class="pyp">
                     <div class="pyp-header">
@@ -233,8 +343,8 @@ const pypHTML = `<div class="pyp">
                             </div>
                         </div>
                     </div>
-                </div>   `
-const notesHtml =  `<div class="Notes">
+                </div>   `;
+const notesHtml = `<div class="Notes">
                     <div class="notesHeader">
                         <h1>Notes</h1>
                         <button id="backFrom" class="back-button">← Back</button>
@@ -249,6 +359,8 @@ const notesHtml =  `<div class="Notes">
                                 <div class="notesCard" data-pdf="https://drive.google.com/file/d/1RpMxugXvVIp0iAMp5HLY05CJ5E1BOZTU/view?usp=share_link">Sustainable Chemistry</div>
                                 <div class="notesCard" data-pdf="https://drive.google.com/file/d/1SFtdQu-ulOUyvwvDo06te8w9wYGCgLD5/view?usp=share_link">Nanotechnology</div>
                                 <div class="notesCard" data-pdf="https://drive.google.com/file/d/1RHh_0bW_G8Lt_CxmGf4RaOvR--MaeNLP/view?usp=share_link">Chromatography</div>
+                                <div class="notesCard" data-pdf="https://drive.google.com/file/d/1HrGwgdJgf7KjUvBsjnl7DiM6qxLIMun6/view?usp=share_link">Lubricants</div>
+                                
                             </div>
                         <h2>Computer Programing for Problem Solving</h2>
                         <div class="notesCards">
@@ -306,8 +418,8 @@ const notesHtml =  `<div class="Notes">
                             <div class="notesCard" data-pdf="https://drive.google.com/file/d/1CkZgq2sR0PMYQAD3uHUdQb2jGsn0ozRs/view?usp=share_link">Projection of Point and Lines</div>
                             <div class="notesCard" data-pdf="https://drive.google.com/file/d/1MD7gJssK_5LPNXMcEtQhU-18JAMB3MQH/view?usp=share_link">Projection of Solids</div>
                             <div class="notesCard" data-pdf="https://drive.google.com/file/d/1CWdLNP6JJAuyFubLIBoYvSMS3p0GEtMi/view?usp=share_link">Section of Solid</div>
-                            <div class="notesCard" data-pdf=""></div>
-                            <div class="notesCard" data-pdf=""></div>
+                            // <div class="notesCard" data-pdf=""></div>
+                            // <div class="notesCard" data-pdf=""></div>
                         </div>
 
                         <h2>Basic Electrical Engineering</h2>
@@ -340,77 +452,77 @@ const notesHtml =  `<div class="Notes">
                             <div class="notesCard" data-pdf="https://drive.google.com/file/d/12lXyF_aQGNUUii-GbGiDLO-au3G4-RDm/view?usp=share_link">Bioscience Textbook</div>
                         </div>
                     </div>
-                </div>             `
+                </div>             `;
 // Saving the original homepage content
 const homePageHTML = content.innerHTML;
 
 // Helper function to reset all buttons
 function resetAllButtons() {
-    allButtons.forEach(btn => {
-        btn.style.backgroundColor = "";
-        btn.style.color = "";
+  allButtons.forEach((btn) => {
+    btn.style.backgroundColor = "";
+    btn.style.color = "";
 
-        const svg = btn.querySelector("svg");
-        if (svg) {
-            svg.style.color = "";
-        }
-    });
+    const svg = btn.querySelector("svg");
+    if (svg) {
+      svg.style.color = "";
+    }
+  });
 }
 
 // Helper function to activate a button
 function activateButton(btn) {
-    btn.style.backgroundColor = "rgb(255, 255, 255)";
-    btn.style.color = "#101319";
+  btn.style.backgroundColor = "rgb(255, 255, 255)";
+  btn.style.color = "#101319";
 
-    const svg = btn.querySelector("svg");
-    if (svg) {
-        svg.style.color = "#101319";
-    }
+  const svg = btn.querySelector("svg");
+  if (svg) {
+    svg.style.color = "#101319";
+  }
 }
 
 // Attach event listeners for dynamic elements
 function attachListeners() {
-    // For books
-    const books = document.querySelectorAll('.book');
-    books.forEach(book => {
-        book.addEventListener('click', function() {
-            const pdfPath = this.getAttribute('data-pdf');
-            window.open(pdfPath, '_blank');
-        });
+  // For books
+  const books = document.querySelectorAll(".book");
+  books.forEach((book) => {
+    book.addEventListener("click", function () {
+      const pdfPath = this.getAttribute("data-pdf");
+      window.open(pdfPath, "_blank");
     });
-// Event listener for pyp cards
-    const pyp = document.querySelectorAll(".pyp-card");
-    pyp.forEach(pyp => {
-        pyp.addEventListener("click", function() {
-            const pdfPath = this.getAttribute("data-pdf");
-            window.open(pdfPath, "_blank");
-        });
-    })
-// Event listener for notes cards 
-const bookCard = document.querySelectorAll(".notesCard");    
-    bookCard.forEach(bookCard => {
-        bookCard.addEventListener("click", function() {
-            const pdfPath = this.getAttribute("data-pdf");
-            window.open(pdfPath, "_blank");
-        });
-    })
-    // For pyq cards
-    const pyqCards = document.querySelectorAll('.pyq-card');
-    pyqCards.forEach(card => {
-        card.addEventListener('click', () => {
-            const subject = card.querySelector('.sub-name').textContent.trim();
-            const questions = subjectData[subject] || [];
+  });
+  // Event listener for pyp cards
+  const pyp = document.querySelectorAll(".pyp-card");
+  pyp.forEach((pyp) => {
+    pyp.addEventListener("click", function () {
+      const pdfPath = this.getAttribute("data-pdf");
+      window.open(pdfPath, "_blank");
+    });
+  });
+  // Event listener for notes cards
+  const bookCard = document.querySelectorAll(".notesCard");
+  bookCard.forEach((bookCard) => {
+    bookCard.addEventListener("click", function () {
+      const pdfPath = this.getAttribute("data-pdf");
+      window.open(pdfPath, "_blank");
+    });
+  });
+  // For pyq cards
+  const pyqCards = document.querySelectorAll(".pyq-card");
+  pyqCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      const subject = card.querySelector(".sub-name").textContent.trim();
+      const questions = subjectData[subject] || [];
 
-            let qCardsHTML = "";
-            questions.forEach(q => {
-                qCardsHTML += `
+      let qCardsHTML = "";
+      questions.forEach((q) => {
+        qCardsHTML += `
                     <div class="q-card" data-link="${q.link}">
                         <span>${q.label}</span>
                     </div>
                 `;
-            });
+      });
 
-            content.innerHTML = `
+      content.innerHTML = `
                 <div class="subject-interface">
                     <h2>${subject} Previous Year Papers</h2>
                     <p>Here you can access and download previous year papers for ${subject}.</p>
@@ -422,114 +534,126 @@ const bookCard = document.querySelectorAll(".notesCard");
                     <button id="goBackBtn">Go Back</button>
                 </div>`;
 
-            attachQCardListeners();
-        });
+      attachQCardListeners();
     });
-    const viewBtn = document.querySelector(".viewBtn");
-    if(viewBtn) {
-        viewBtn.addEventListener('click', () => {
-            resetAllButtons();
-            activateButton(booksBtn);
-            content.innerHTML = booksPageHTML;
-            setTimeout(() => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-              }, 50); // small delay
-            attachListeners();
-        });
-    }
-    const pypViewBtn = document.querySelector(".viewBtn-pyp");
-    if(pypViewBtn) {
-        pypViewBtn.addEventListener("click", ()=>{
-            resetAllButtons();
-            activateButton(pypBtn);
-            content.innerHTML = pypHTML;
-            window.scrollTo(0, 0);
-            attachListeners();
-        })
-    }
-    const notesViewBtn = document.querySelector(".viewBtn-Notes");
-    if(notesViewBtn) {
-        notesViewBtn.addEventListener("click", ()=>{
-            resetAllButtons();
-            activateButton(notesBtn);
-            content.innerHTML = notesHtml;
-            notes.style.margin = "0px";
-            window.scrollTo(0,0);
-            attachListeners();
-        })
-    }
-    
-
+  });
+  const viewBtn = document.querySelector(".viewBtn");
+  if (viewBtn) {
+    viewBtn.addEventListener("click", () => {
+      resetAllButtons();
+      activateButton(booksBtn);
+      content.innerHTML = booksPageHTML;
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 50); // small delay
+      attachListeners();
+    });
+  }
+  const pypViewBtn = document.querySelector(".viewBtn-pyp");
+  if (pypViewBtn) {
+    pypViewBtn.addEventListener("click", () => {
+      resetAllButtons();
+      activateButton(pypBtn);
+      content.innerHTML = pypHTML;
+      window.scrollTo(0, 0);
+      attachListeners();
+    });
+  }
+  const notesViewBtn = document.querySelector(".viewBtn-Notes");
+  if (notesViewBtn) {
+    notesViewBtn.addEventListener("click", () => {
+      resetAllButtons();
+      activateButton(notesBtn);
+      content.innerHTML = notesHtml;
+      notes.style.margin = "0px";
+      window.scrollTo(0, 0);
+      attachListeners();
+    });
+  }
 }
 
 // Attach listeners to newly created q-cards
 function attachQCardListeners() {
-    const qCards = document.querySelectorAll('.q-card');
-    qCards.forEach(card => {
-        card.addEventListener('click', () => {
-            const link = card.getAttribute('data-link');
-            if (link) {
-                window.open(link, '_blank');
-            }
-        });
+  const qCards = document.querySelectorAll(".q-card");
+  qCards.forEach((card) => {
+    card.addEventListener("click", () => {
+      const link = card.getAttribute("data-link");
+      if (link) {
+        window.open(link, "_blank");
+      }
     });
+  });
 
-    // Go Back button
-    const goBackBtn = document.getElementById('goBackBtn');
-    if (goBackBtn) {
-        goBackBtn.addEventListener('click', () => {
-            location.reload(); // Simple reload for now
-        });
-    }
+  // Go Back button
+  const goBackBtn = document.getElementById("goBackBtn");
+  if (goBackBtn) {
+    goBackBtn.addEventListener("click", () => {
+      location.reload(); // Simple reload for now
+    });
+  }
 }
 
 // Set Home as active by default
 activateButton(homeBtn);
-attachListeners();  // Attach listeners for first load
+attachListeners(); // Attach listeners for first load
 
 // Home Button
 homeBtn.addEventListener("click", () => {
-    resetAllButtons();
-    activateButton(homeBtn);
-    content.innerHTML = homePageHTML;
-    window.scrollTo(0, 0);
-    attachListeners();
+  resetAllButtons();
+  activateButton(homeBtn);
+  content.innerHTML = homePageHTML;
+  window.scrollTo(0, 0);
+  attachListeners();
 });
 
 // PYP Button
 pypBtn.addEventListener("click", () => {
-    resetAllButtons();
-    activateButton(pypBtn);
-    content.innerHTML = pypHTML;
-    window.scrollTo(0, 0);
-    attachListeners();
+  resetAllButtons();
+  activateButton(pypBtn);
+  content.innerHTML = pypHTML;
+  window.scrollTo(0, 0);
+  attachListeners();
 });
 
 // Books Button
 booksBtn.addEventListener("click", () => {
-    resetAllButtons();
-    activateButton(booksBtn);
-    content.innerHTML = booksPageHTML;
-    window.scrollTo(0, 0);
-    attachListeners();
+  resetAllButtons();
+  activateButton(booksBtn);
+  content.innerHTML = booksPageHTML;
+  window.scrollTo(0, 0);
+  attachListeners();
 });
 
 // Notes Button
 notesBtn.addEventListener("click", () => {
-    resetAllButtons();
-    activateButton(notesBtn);
-    content.innerHTML = notesHtml;
-    window.scrollTo(0, 0);
-    
-    attachListeners();
+  resetAllButtons();
+  activateButton(notesBtn);
+  content.innerHTML = notesHtml;
+  window.scrollTo(0, 0);
+
+  attachListeners();
 });
-document.querySelector(".hamburger").addEventListener("click", ()=> {
-    console.log("hamburger clicked");
-    document.querySelector(".left").style.left = "0%";
-})
+document.querySelector(".hamburger").addEventListener("click", () => {
+  console.log("hamburger clicked");
+  document.querySelector(".left").style.left = "0%";
+});
 
 // Add an event listener for close button
-document.querySelector(".close").addEventListener("click", ()=> {
-    document.querySelector(".left").style.left = "-120%";
-})
+document.querySelector(".close").addEventListener("click", () => {
+  document.querySelector(".left").style.left = "-120%";
+});
 
+function handleResponsiveVisibility() {
+  const mediaQuery = window.matchMedia("(max-width: 580px)");
+  const hiddenElements = document.querySelectorAll(".hide-on-small");
+
+  hiddenElements.forEach(el => {
+    el.style.display = mediaQuery.matches ? "none" : "";
+  });
+}
+
+// Run on load
+handleResponsiveVisibility();
+
+// Run on resize
+window.addEventListener("resize", handleResponsiveVisibility);
