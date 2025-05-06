@@ -356,6 +356,7 @@ const notesHtml = `<div class="Notes">
                                 <div class="notesCard" data-pdf="https://drive.google.com/file/d/1SFtdQu-ulOUyvwvDo06te8w9wYGCgLD5/view?usp=share_link">Nanotechnology</div>
                                 <div class="notesCard" data-pdf="https://drive.google.com/file/d/1RHh_0bW_G8Lt_CxmGf4RaOvR--MaeNLP/view?usp=share_link">Chromatography</div>
                                 <div class="notesCard" data-pdf="https://drive.google.com/file/d/1HrGwgdJgf7KjUvBsjnl7DiM6qxLIMun6/view?usp=share_link">Lubricants</div>
+                                <div class="notesCard data-pdf="https://drive.google.com/file/d/1ITg5bYzklQHI2BMJ4T0Nox1vqOSforl4/view?usp=share_link">Corrosion</div>
                                 
                             </div>
                         <h2>Computer Programing for Problem Solving</h2>
