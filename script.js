@@ -94,7 +94,7 @@ const subjectData = {
     },
     {
       label: "ESE 2023 (Sem I)",
-      link: "https://drive.google.com/file/d/1Oj2TNG95uCkgRzmUNV6n1szKBIgNcx9N/view?usp=sharing",
+      link: "https://drive.google.com/file/d/1OiQT_8L5DcFj5gwsiMq1XOQXKkQLq2bS/view?usp=share_link",
     },
     {
       label: "MST 2023 (Sem I)",
@@ -418,8 +418,6 @@ const notesHtml = `<div class="Notes">
                             <div class="notesCard" data-pdf="https://drive.google.com/file/d/1CkZgq2sR0PMYQAD3uHUdQb2jGsn0ozRs/view?usp=share_link">Projection of Point and Lines</div>
                             <div class="notesCard" data-pdf="https://drive.google.com/file/d/1MD7gJssK_5LPNXMcEtQhU-18JAMB3MQH/view?usp=share_link">Projection of Solids</div>
                             <div class="notesCard" data-pdf="https://drive.google.com/file/d/1CWdLNP6JJAuyFubLIBoYvSMS3p0GEtMi/view?usp=share_link">Section of Solid</div>
-                            // <div class="notesCard" data-pdf=""></div>
-                            // <div class="notesCard" data-pdf=""></div>
                         </div>
 
                         <h2>Basic Electrical Engineering</h2>
