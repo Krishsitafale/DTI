@@ -159,7 +159,7 @@ const subjectData = {
   ],
   CPPS: [
     {
-      label: "ESE 2024 (Sem I",
+      label: "ESE 2024 (Sem I)",
       link: "https://drive.google.com/file/d/1Nic8XN-Y1KTXOqxqznWeFmEQAcU1flES/view?usp=share_link",
     },
     {
@@ -177,7 +177,7 @@ const subjectData = {
   ],
   BSE: [
     {
-      label: "ESE 2024(Sem I)",
+      label: "ESE 2024 (Sem I)",
       link: "https://drive.google.com/file/d/1Noj2PByfJbcUeRBtXD8iu-0GS9Z8qd-E/view?usp=share_link",
     },
     {
@@ -377,7 +377,7 @@ const notesHtml = `<div class="Notes">
                             <div class="notesCard" data-pdf="https://drive.google.com/file/d/1L_uqYtaM2TLktUJv7ZY9lWRSE5eDXCJA/view?usp=share_link">Inheritance</div>
                             <div class="notesCard" data-pdf="https://drive.google.com/file/d/1Lg0l7Y-k1EweGMfO5pie8_RAoWV4OBrj/view?usp=share_link">File Handling</div>
                             <div class="notesCard" data-pdf="https://drive.google.com/file/d/1Ly094j3y78O1edPkTnuDYbDLVok5lqo9/view?usp=share_link">Remaining notes</div>
-                            <div class="notesCard" data-pdf="https://drive.google.com/file/d/1LWJExR0S7V3xBN1-btg1rebrT_rIR5Sv/view?usp=share_link">Practice Programs </div>
+                            <div class="notesCard" data-pdf="https://drive.google.com/file/d/1LWJExR0S7V3xBN1-btg1rebrT_rIR5Sv/view?usp=share_link">Practice Programs</div>
                         </div>
                         <h2>Basic Electronics</h2>
                         <div class="notesCards">
