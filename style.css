@@ -18,7 +18,7 @@
 /* Prevent horizontal scrolling */
 html, body {
   overflow-x: hidden;
-  background-color: #0d1026; /* your dark background color */
+  background-color:rgb(21, 21, 41); 
 }
 
 /* Chrome, Edge, Safari */
@@ -31,7 +31,7 @@ html, body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color:rgb(27, 33, 50); /* Vibrant blue thumb */
+  background-color:rgb(27, 33, 50);
   border-radius: 10px;
 }
 
