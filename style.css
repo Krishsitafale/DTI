@@ -586,8 +586,8 @@ p {
     margin: 10px 25px;
   }
   .pyq-section {
-    margin: 30px;
-    padding: 40px;
+    margin: 40px;
+    padding: 30px;
     border-radius: 12px;
     }
   .pyp {
@@ -601,11 +601,6 @@ p {
   .pyp-header {
     align-items: start;
     justify-content: space-between;
-  }
-  .pyp-card {
-    width: 100px;
-    height: 50px;
-    font-size: 14px;
   }
 
   .viewBtn-pyp {
