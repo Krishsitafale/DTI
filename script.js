@@ -71,10 +71,6 @@ const subjectData = {
       link: "https://drive.google.com/file/d/1Pbq3u_E_w8FPloegJk9iDWVWMpevg8jI/view?usp=share_link",
     },
     {
-      label: "ESE 2025 (Sem I)",
-      link: "https://drive.google.com/file/d/your-link-4/view",
-    },
-    {
       label: "ESE 2024 (Sem II)",
       link: "https://drive.google.com/file/d/1OUJh8iy2hejhxqK1VnoE7jjDAtENEDo2/view?usp=share_link",
     },
