@@ -250,6 +250,9 @@ const booksPageHTML = ` <div class="Books">
             <div class="book-card">
                 <img class="book" src="assets/robert.png" data-pdf="https://drive.google.com/file/d/19E5iDf4iCdyQJsWYrVup8td0QfSq0gPW/view?usp=share_link" alt="Basic Electronics Robert L. Boylestad">
             </div>
+            <div class="book-card"> 
+              <img class="book" src="assets/differential.png" data-pdf="https://drive.google.com/file/d/1KNrZJODGGJLNAhng4e3rXnkZNaFX7AJw/view?usp=share_link" alt="Differential Equations(Maths)">
+            </div>  
         </div>
     </div>`;
 
