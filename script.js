@@ -394,7 +394,7 @@ const notesHtml = `<div class="Notes">
                         <h2>Maths</h2>
                         <div class="notesCards">
                             <div class="notesCard" data-pdf="https://drive.google.com/file/d/13LvF1AebXkuvcuvTlRqvhjaB94HKAKzT/view?usp=share_link">Linear Algebra</div>
-                            <div class="notesCard" data-pdf="https://drive.google.com/file/d/13LvF1AebXkuvcuvTlRqvhjaB94HKAKzT/view?usp=share_link">Vector differential Calculus</div>
+                            <div class="notesCard" data-pdf="https://drive.google.com/file/d/17J0ItA39b35mwzpjy59FDowJsRslTuKS/view?usp=share_link">Vector differential Calculus</div>
                             <div class="notesCard" data-pdf="https://drive.google.com/file/d/13MfiWnu1rXPu1rM795Ibe4oUpLQsol6T/view?usp=share_link">Linear Algebra Short Notes</div>
                             <div class="notesCard" data-pdf="https://drive.google.com/file/d/17gZzafGEHDCDbLnMdOCfCt5LMW-q9RfS/view?usp=share_link">Line Integral</div>
                             <div class="notesCard" data-pdf="https://drive.google.com/file/d/13PKUSoI06_m-wYvAF4lXUB3Rc1US8ogA/view?usp=share_link">List of Formulae</div>
