@@ -418,6 +418,7 @@ const notesHtml = `<div class="Notes">
                             <div class="notesCard" data-pdf="https://drive.google.com/file/d/1CkZgq2sR0PMYQAD3uHUdQb2jGsn0ozRs/view?usp=share_link">Projection of Point and Lines</div>
                             <div class="notesCard" data-pdf="https://drive.google.com/file/d/1MD7gJssK_5LPNXMcEtQhU-18JAMB3MQH/view?usp=share_link">Projection of Solids</div>
                             <div class="notesCard" data-pdf="https://drive.google.com/file/d/1CWdLNP6JJAuyFubLIBoYvSMS3p0GEtMi/view?usp=share_link">Section of Solid</div>
+                            <div class="notesCard" data-pdf="https://drive.google.com/file/d/1QaS-F8IjHAgD3NuJIEuhVXh0x8_nSP98/view?usp=share_link">E.G. Lab Drawings</div>
                         </div>
 
                         <h2>Basic Electrical Engineering</h2>
