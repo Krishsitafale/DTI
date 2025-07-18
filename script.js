@@ -33,6 +33,10 @@ document.addEventListener("click", function (e) {
 const subjectData = {
   Maths: [
     {
+      label: "ESE 2025 (Sem II)",
+      link: "https://drive.google.com/file/d/1ZA6XZyF9qnB5jqB2PYc66VgrZ7rwYA6T/view?usp=share_link",
+    },
+    {
       label: "MST 2025 (Sem II)",
       link: "https://drive.google.com/file/d/1NNJYLEVEAOz1GiravQGdWQLzf_7tMRaD/view?usp=share_link",
     },
@@ -62,6 +66,10 @@ const subjectData = {
     },
   ],
   "B.E.": [
+    {
+      label: "ESE 2025 (Sem II)",
+      link: "https://drive.google.com/file/d/1ebiBeiDuk9ddPyP6NOqe-Wlg35tnD4_e/view?usp=share_link",
+    },
     {
       label: "MST 2025 (Sem II)",
       link: "https://drive.google.com/file/d/1NNSMCP3xuojznBLTgBpuws_taqkQWPkW/view?usp=share_link",
@@ -99,6 +107,10 @@ const subjectData = {
   ],
   "Engineering Graphics": [
     {
+      label: "ESE 2025 (Sem II)",
+      link: "https://drive.google.com/file/d/1VU6QwUx2glY-J09LKxgEIi68vccTLGZh/view?usp=share_link",
+    },
+    {
       label: "MST 2025 (Sem II)",
       link: "https://drive.google.com/file/d/1NOVIiRU-GrV1pcoYTcIHw9s-dSg-h1cN/view?usp=share_link",
     },
@@ -113,6 +125,10 @@ const subjectData = {
   ],
   "Numerical Techiques": [
     {
+      label: "ESE 2025 (Sem II)",
+      link: "https://drive.google.com/file/d/1nbzs3fdj-NaZllcdyWaWn_kvjdb0HWpx/view?usp=share_link",
+    },
+    {
       label: "MST 2025 (Sem II)",
       link: "https://drive.google.com/file/d/1NOfxIPvfmrFKM202Z2k4ZxOcGGydq3pk/view?usp=share_link",
     },
@@ -126,6 +142,10 @@ const subjectData = {
     },
   ],
   "Applied Physics": [
+    {
+      label: "ESE 2025 (Sem II)",
+      link: "https://drive.google.com/file/d/1nTXmN3jGT8h379Wbi9uKeClef-uBZD2E/view?usp=share_link",
+    },
     {
       label: "MST 2025 (Sem II)",
       link: "https://drive.google.com/file/d/1NP9f29TMSB1qEf1FJK3EF8OL4HaUgk4Q/view?usp=share_link",
@@ -286,15 +306,21 @@ const pypHTML = `<div class="pyp">
                                 <h3>SEM II</h3>
                             </div>
                             <div class="pyp-cards">
+                               <div class="pyp-card" data-pdf="https://drive.google.com/file/d/1ZA6XZyF9qnB5jqB2PYc66VgrZ7rwYA6T/view?usp=share_link">Maths (ESE)</div>
                                <div class="pyp-card" data-pdf="https://drive.google.com/file/d/1NNJYLEVEAOz1GiravQGdWQLzf_7tMRaD/view?usp=share_link">Maths (MST)</div>
+                               <div class="pyp-card" data-pdf="https://drive.google.com/file/d/1nTXmN3jGT8h379Wbi9uKeClef-uBZD2E/view?usp=share_link">Physics (ESE)</div>
                                 <div class="pyp-card" data-pdf="https://drive.google.com/file/d/1NP9f29TMSB1qEf1FJK3EF8OL4HaUgk4Q/view?usp=share_link">Physics (MST)</div>
+                                <div class="pyp-card" data-pdf="https://drive.google.com/file/d/1VU6QwUx2glY-J09LKxgEIi68vccTLGZh/view?usp=share_link">E.G. (ESE)</div>
                                 <div class="pyp-card" data-pdf="https://drive.google.com/file/d/1NP9f29TMSB1qEf1FJK3EF8OL4HaUgk4Q/view?usp=share_link">E.G. (MST)</div>
+                                <div class="pyp-card" data-pdf="https://drive.google.com/file/d/1nbzs3fdj-NaZllcdyWaWn_kvjdb0HWpx/view?usp=share_link">N.T. (ESE)</div>
                                 <div class="pyp-card" data-pdf="https://drive.google.com/file/d/1NOfxIPvfmrFKM202Z2k4ZxOcGGydq3pk/view?usp=share_link">N.T. (MST)</div>
+                                <div class="pyp-card" data-pdf="https://drive.google.com/file/d/1ebiBeiDuk9ddPyP6NOqe-Wlg35tnD4_e/view?usp=share_link">B.E. (ESE)</div>
                                 <div class="pyp-card" data-pdf="https://drive.google.com/file/d/1NNSMCP3xuojznBLTgBpuws_taqkQWPkW/view?usp=share_link" >B.E. (MST)</div>
                                 <div class="pyp-card" data-pdf="https://drive.google.com/file/d/1Pbq3u_E_w8FPloegJk9iDWVWMpevg8jI/view?usp=share_link" >B.E. (MST, EC)</div>                                
                                 <div class="pyp-card" data-pdf="https://drive.google.com/file/d/1Ddu4lACQq73o-fDI1MsxUlgYaLyHCxqH/view?usp=share_link">Engineering Mechanics (MST)</div>
                                 <div class="pyp-card" data-pdf="https://drive.google.com/file/d/1DdGZb56eD41Rkr8eyZQ28LT8vlLkdp74/view?usp=share_link">CPPS (MST)</div>
                                 <div class="pyp-card" data-pdf="https://drive.google.com/file/d/1DbN2cHuLO1OZAScqxebX9UDOLll5tpus/view?usp=share_link">Chemistry (MST)</div>
+                                <div class="pyp-card" data-pdf="https://drive.google.com/file/d/1r06G9a1D4JWnzqzo5cM3RzUJ5u8F_bJj/view?usp=share_link">D.T.I. (ESE)</div>
                                 <div class="pyp-card" data-pdf="https://drive.google.com/file/d/1DgLAE9zGhzkSM5NS4NLACsN1sl-guvd1/view?usp=share_link">Thermodynamics (MST, Mech.)</div>
                                 <div class="pyp-card" data-pdf="https://drive.google.com/file/d/1Dj1j5FPYWZDpBL4CT97s6tsx5mIWrLDH/view?usp=share_link">Manufacturing Processes (MST)</div>
                                 <div class="pyp-card" data-pdf="https://drive.google.com/file/d/1DtO5S_j0Luc7CDRiajiI_Vr84hzeQdbS/view?usp=share_link">IKS (MST, Mech.)</div>
